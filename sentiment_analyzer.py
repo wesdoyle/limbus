@@ -7,6 +7,7 @@ class SimpleSentimentAnalyzer(object):
     def __init__(self):
         self.pos_words = self._get_words("POS_WORD_LIST")
         self.neg_words = self._get_words("NEG_WORD_LIST")
+        self.negation_words = self._get_words("NEGATION_WORD_LIST")
 
     def score(self, tokens):
         """
@@ -15,16 +16,18 @@ class SimpleSentimentAnalyzer(object):
         # not, never, etc...
         """
         score = 0
+        negation_polarity = 1
         if tokens:
-            print(tokens)
             for token in tokens:
+                if token in self.negation_words:
+                    negation_polarity *= -1
                 if token in self.pos_words:
                     print(token)
                     score += 1
                 elif token in self.neg_words:
                     score -= 1
             score = score / len(tokens)
-        return score
+        return score * negation_polarity
 
     def _get_words(self, path):
         words = []
