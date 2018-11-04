@@ -1,14 +1,21 @@
 from tokenizers import SimpleTokenizer
+import pytest
 
 class TestTokenizer:
     """
     Tokenizer unit tests
     """
-    def test_tokenizer_splits_string_sent_on_whitespace(self):
-        input_sent = "foo bar baz"
+
+    @pytest.mark.parametrize("input, expected",
+            [
+                ("foo bar baz", ['foo', 'bar', 'baz']),
+                ("", []),
+                ("foobarbaz", ['foobarbaz']),
+                (" ", []),
+            ])
+    def test_tokenizer_splits_string_sent_on_whitespace(self, input, expected):
         tokenizer = SimpleTokenizer()
-        tokens = tokenizer.tokenize(input_sent)
-        expected = ['foo', 'bar', 'baz']
+        tokens = tokenizer.tokenize(input)
         assert expected == tokens
 
     def test_tokenizer_splits_string_sent_on_whitespace_case_insensitive(self):
