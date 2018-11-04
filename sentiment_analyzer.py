@@ -22,7 +22,6 @@ class SimpleSentimentAnalyzer(object):
                 if token in self.negation_words:
                     negation_polarity *= -1
                 if token in self.pos_words:
-                    print(token)
                     score += 1
                 elif token in self.neg_words:
                     score -= 1
