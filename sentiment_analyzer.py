@@ -11,6 +11,8 @@ class SimpleSentimentAnalyzer(object):
     def score(self, tokens):
         """
         Returns a sentiment score for a provided list of string tokens
+        # TODO: account for tokens that invert the sentment polarity
+        # not, never, etc...
         """
         score = 0
         for token in tokens:
@@ -18,7 +20,7 @@ class SimpleSentimentAnalyzer(object):
                 score += 1
             elif token in self.neg_words:
                 score -= 1
-        return score
+        return score / len(tokens)
 
     def _get_words(self, path):
         words = []
