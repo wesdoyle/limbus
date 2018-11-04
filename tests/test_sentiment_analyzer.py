@@ -33,11 +33,39 @@ class TestSentimentAnalyzer:
                 (['not', 'good', 'happy', 'wonderful'], True),
                 (['not', 'not', 'good', 'happy', 'wonderful'], False),
                 (['not', 'not', 'not', 'good'], True),
+                (['nor', 'not', 'not', 'good'], True),
+                (['nor', 'not', 'good'], False),
             ])
     def test_inverts_sentiment_if_tokens_contain_negation_word(self, tokens, expected):
         sa = SimpleSentimentAnalyzer()
         score = sa.score(tokens)
-        if expected:
+        if expected is True:
             assert score < 0
-        else:
+        elif expected is False:
             assert score > 0
+        else:
+            assert score == 0
+
+    @pytest.mark.parametrize("tokens, expected",
+            [
+                (['nor'], 0),
+                (['nor', 'foo'], 0),
+            ])
+    def test_if_sentiment_is_neutral_and_contains_negation_token_score_is_neutral(self, tokens, expected):
+        sa = SimpleSentimentAnalyzer()
+        score = sa.score(tokens)
+        assert score == expected
+
+
+    @pytest.mark.parametrize("tokens, expected",
+            [
+                (['good', 'excellent', 'awesome', 'foo'], 0.75),
+                (['bad', 'terrible', 'annoying', 'foo'], -0.75),
+                (['not', 'bad', 'terrible', 'annoying', 'foo'], 0.6),
+            ])
+    def test_score_is_fractional_for_tokens_with_non_unity_net_sentiment(self, tokens, expected):
+        sa = SimpleSentimentAnalyzer()
+        score = sa.score(tokens)
+        assert score == expected
+
+
