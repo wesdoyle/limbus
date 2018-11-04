@@ -5,13 +5,13 @@ class TestSentimentAnalyzer:
         tokens = ['good', 'happy', 'wonderful']
         sa = SimpleSentimentAnalyzer()
         score = sa.score(tokens)
-        assert score > 0
+        assert score == 3
 
     def test_sentiment_analyzer_should_return_negative_score_for_all_neg_words(self):
         tokens = ['bad', 'unfortunate', 'horrible']
         sa = SimpleSentimentAnalyzer()
         score = sa.score(tokens)
-        assert score < 0
+        assert score == -3
 
     def test_sentiment_analyzer_should_return_zero_score_for_all_neutral_words(self):
         tokens = ['house', 'table', 'cat']
