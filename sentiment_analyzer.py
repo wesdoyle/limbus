@@ -15,12 +15,16 @@ class SimpleSentimentAnalyzer(object):
         # not, never, etc...
         """
         score = 0
-        for token in tokens:
-            if token in self.pos_words:
-                score += 1
-            elif token in self.neg_words:
-                score -= 1
-        return score / len(tokens)
+        if tokens:
+            print(tokens)
+            for token in tokens:
+                if token in self.pos_words:
+                    print(token)
+                    score += 1
+                elif token in self.neg_words:
+                    score -= 1
+            score = score / len(tokens)
+        return score
 
     def _get_words(self, path):
         words = []
