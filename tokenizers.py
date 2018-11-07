@@ -41,9 +41,25 @@ class SimpleSentenceTokenizer(object):
         :param sentence: string sentences to tokenize
         :return: List<string> sentences
         """
-        return [sent.strip() for sent in re.split(r"[.!?]", sents) if sent]
+        splitter = r"(?i)" + self._build_neg_lookbehind_predicate() + r"[^\w \,\;\{\}\[\]\&\^\%\$\#\@\*\/\\]"
+        return [sent.strip() for sent in re.split(splitter, sents) if sent]
+
+    def _build_neg_lookbehind_predicate(self):
+        """
+        Builds a string of negative lookbehinds for the list of
+        abbreviated words on this sentence tokenizer
+        """
+        neg_lookbehind_predicate = r""
+
+        for abbrev in self.abbrevs:
+            neg_lookbehind_predicate += r"(?<!{})".format(abbrev)
+
+        return neg_lookbehind_predicate
 
     def _get_abbreviation_words(self):
+        """
+        Returns file containing abbreviated words as a Python list of those words
+        """
         words_path = os.environ.get("ABBREV_WORD_LIST")
         words = []
         with open(words_path) as f:
