@@ -57,7 +57,9 @@ class TestSimplePipeline:
 
     @pytest.mark.parametrize("input",
             [
-                (['foo']), (['foo', 'sent_tokenize'], ['foo', 'bar'])
+                (['foo']),
+                (['foo', 'sent_tokenize']),
+                (['foo', 'bar']),
             ]
         )
     def test_simple_pipeline_should_invoke_sentence_tokenizer(self, input):
