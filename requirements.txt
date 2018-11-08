@@ -84,7 +84,6 @@ s3transfer==0.1.13
 scikit-learn==0.20.0
 scipy==1.1.0
 Send2Trash==1.5.0
--e git+https://github.com/wesdoyle/simple-sentiment.git@0a254c8d702983693f04ba280222f5fafa697bef#egg=Simple_Sentiment_Analyzer
 SimpleSentimentAnalyzer==0.0.1
 six==1.11.0
 sklearn==0.0
