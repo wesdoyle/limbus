@@ -1,0 +1,6 @@
+[run]
+omit =
+    */.local/*
+    env/*
+    tests/*
+

@@ -114,3 +114,5 @@ dmypy.json
 .pyre/
 
 resources
+
+coverage.html/
