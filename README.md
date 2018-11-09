@@ -6,7 +6,9 @@ A tool for running natural language processing pipelines in Python
 
 
 Positive and Negative word lists adapted from:
+> https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
 
+References:
 >  _Minqing Hu and Bing Liu. "Mining and Summarizing Customer Reviews."_
 >      Proceedings of the ACM SIGKDD International Conference on Knowledge
 >      Discovery and Data Mining (KDD-2004), Aug 22-25, 2004, Seattle,
