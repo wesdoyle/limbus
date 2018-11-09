@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9e02d05-4d97-409b-9c03-38fa93e0a2fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiment_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiment_analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tokenizers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tokenizers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_sentiment_analyzer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_simple_pipeline.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_simple_sentence_tokenizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_tokenizer.py" beforeDir="false" />
-    </list>
+    <list default="true" id="b9e02d05-4d97-409b-9c03-38fa93e0a2fd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,14 +11,17 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/simple_sentiment$pytest_for_test_simple_pipeline_TestSimplePipeline_test_simple_pipeline_should_invoke_three_features_in_order.coverage" NAME="pytest for test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_three_features_in_order Coverage Results" MODIFIED="1541777395975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
     <SUITE FILE_PATH="coverage/simple_sentiment$pytest_for_test_simple_pipeline_TestSimplePipeline.coverage" NAME="pytest for test_simple_pipeline.TestSimplePipeline Coverage Results" MODIFIED="1541777752004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
+    <SUITE FILE_PATH="coverage/simple_sentiment$pytest_for_test_simple_sentence_tokenizer_TestSimpleSentenceTokenizer_test_splits_sentence_strings_on_sentence_punctuation.coverage" NAME="pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer.test_splits_sentence_strings_on_sentence_punctuation Coverage Results" MODIFIED="1541796450263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
     <SUITE FILE_PATH="coverage/simple_sentiment$pytest_for_test_simple_pipeline_TestSimplePipeline_test_simple_pipeline_should_invoke_sentence_tokenizer.coverage" NAME="pytest for test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_sentence_tokenizer Coverage Results" MODIFIED="1541777729031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
     <SUITE FILE_PATH="coverage/simple_sentiment$pytest_for_test_tokenizer_TestTokenizer.coverage" NAME="pytest for test_tokenizer.TestTokenizer Coverage Results" MODIFIED="1541777794931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
+    <SUITE FILE_PATH="coverage/simple_sentiment$pytest_for_test_simple_sentence_tokenizer_TestSimpleSentenceTokenizer.coverage" NAME="pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer Coverage Results" MODIFIED="1541796454739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
     <SUITE FILE_PATH="coverage/simple_sentiment$pytest_for_test_sentiment_analyzer_TestSentimentAnalyzer.coverage" NAME="pytest for test_sentiment_analyzer.TestSentimentAnalyzer Coverage Results" MODIFIED="1541777808111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="572011395">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -79,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/test_tokenizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="256">
+              <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -91,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/test_sentiment_analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="80">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -128,9 +123,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -196,39 +192,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_sentiment_analyzer.TestSentimentAnalyzer">
-    <configuration name="pytest for src.tests.test_simple_pipeline.TestSimplePipeline" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="simple-sentiment" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;src.tests.test_simple_pipeline.TestSimplePipeline&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for src.tests.test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_three_features_in_order" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="simple-sentiment" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;src.tests.test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_three_features_in_order&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer">
     <configuration name="pytest for test_sentiment_analyzer.TestSentimentAnalyzer" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="simple-sentiment" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -261,7 +225,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_sentence_tokenizer" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="simple-sentiment" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -273,7 +237,23 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_sentence_tokenizer&quot;" />
+      <option name="_new_target" value="&quot;test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer.test_splits_sentence_strings_on_sentence_punctuation" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="simple-sentiment" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer.test_splits_sentence_strings_on_sentence_punctuation&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -295,18 +275,18 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.pytest for test_simple_pipeline.TestSimplePipeline" />
-      <item itemvalue="Python tests.pytest for src.tests.test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_three_features_in_order" />
-      <item itemvalue="Python tests.pytest for test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_sentence_tokenizer" />
       <item itemvalue="Python tests.pytest for test_tokenizer.TestTokenizer" />
       <item itemvalue="Python tests.pytest for test_sentiment_analyzer.TestSentimentAnalyzer" />
+      <item itemvalue="Python tests.pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer" />
+      <item itemvalue="Python tests.pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer.test_splits_sentence_strings_on_sentence_punctuation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer" />
+        <item itemvalue="Python tests.pytest for test_simple_sentence_tokenizer.TestSimpleSentenceTokenizer.test_splits_sentence_strings_on_sentence_punctuation" />
         <item itemvalue="Python tests.pytest for test_sentiment_analyzer.TestSentimentAnalyzer" />
         <item itemvalue="Python tests.pytest for test_tokenizer.TestTokenizer" />
         <item itemvalue="Python tests.pytest for test_simple_pipeline.TestSimplePipeline" />
-        <item itemvalue="Python tests.pytest for test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_sentence_tokenizer" />
-        <item itemvalue="Python tests.pytest for src.tests.test_simple_pipeline.TestSimplePipeline.test_simple_pipeline_should_invoke_three_features_in_order" />
       </list>
     </recent_temporary>
   </component>
@@ -339,12 +319,19 @@
     <history-entry file="pytest_for_test_simple_pipeline_TestSimplePipeline - 2018.11.09 at 09h 35m 53s.xml">
       <configuration name="pytest for test_simple_pipeline.TestSimplePipeline" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_for_test_tokenizer_TestTokenizer - 2018.11.09 at 09h 36m 35s.xml">
+      <configuration name="pytest for test_tokenizer.TestTokenizer" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_sentiment_analyzer_TestSentimentAnalyzer - 2018.11.09 at 09h 36m 49s.xml">
+      <configuration name="pytest for test_sentiment_analyzer.TestSentimentAnalyzer" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -354,7 +341,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32908162" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32908162" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -403,16 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/test_sentiment_analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/test_simple_pipeline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -435,8 +412,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/test_tokenizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="256">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/test_sentiment_analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

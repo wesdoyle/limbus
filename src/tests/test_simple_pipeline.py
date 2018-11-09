@@ -8,7 +8,7 @@ from src.pipelines import SimplePipeline
 
 class TestSimplePipeline:
 
-    @patch('pipelines.SimplePipeline.sent_tokenize')
+    @patch('src.pipelines.SimplePipeline.sent_tokenize')
     def test_simple_pipeline_should_invoke_sentence_tokenizer(self, mock_st):
         input_text = "foo! bar baz, and. quux?"
         features = ['sent_tokenize']
@@ -16,7 +16,7 @@ class TestSimplePipeline:
         sut.run()
         sut.sent_tokenize.assert_called_once_with(input_text)
 
-    @patch('pipelines.SimplePipeline.word_tokenize')
+    @patch('src.pipelines.SimplePipeline.word_tokenize')
     def test_simple_pipeline_should_invoke_word_tokenizer(self, mock_wt):
         input_text = "foo! bar baz, and. quux?"
         features = ['word_tokenize']
@@ -24,7 +24,7 @@ class TestSimplePipeline:
         sut.run()
         sut.word_tokenize.assert_called_once_with(input_text)
 
-    @patch('pipelines.SimplePipeline.score_sentiment')
+    @patch('src.pipelines.SimplePipeline.score_sentiment')
     def test_simple_pipeline_should_invoke_score_sentiment(self, mock_ss):
         input_text = "Good stuff"
         features = ['score_sentiment']
@@ -32,8 +32,8 @@ class TestSimplePipeline:
         sut.run()
         sut.score_sentiment.assert_called_once_with(input_text)
 
-    @patch('pipelines.SimplePipeline.word_tokenize')
-    @patch('pipelines.SimplePipeline.sent_tokenize')
+    @patch('src.pipelines.SimplePipeline.word_tokenize')
+    @patch('src.pipelines.SimplePipeline.sent_tokenize')
     def test_simple_pipeline_should_invoke_two_features_in_order(self, mock_st, mock_wt):
         mock_st.return_value = "foo"
         input_text = "foo! bar baz, and. quux?"
@@ -43,9 +43,9 @@ class TestSimplePipeline:
         sut.sent_tokenize.assert_called_once_with(input_text)
         sut.word_tokenize.assert_called_once_with("foo")
 
-    @patch('pipelines.SimplePipeline.score_sentiment')
-    @patch('pipelines.SimplePipeline.word_tokenize')
-    @patch('pipelines.SimplePipeline.sent_tokenize')
+    @patch('src.pipelines.SimplePipeline.score_sentiment')
+    @patch('src.pipelines.SimplePipeline.word_tokenize')
+    @patch('src.pipelines.SimplePipeline.sent_tokenize')
     def test_simple_pipeline_should_invoke_three_features_in_order(self, mock_st, mock_wt, mock_ss):
         mock_st.return_value = "foo"
         mock_wt.return_value = 1234
