@@ -3,7 +3,8 @@ python:
     - "3.6"
 install:
     - pip install -r requirements.txt
-    - pip install .
+    - python setup.py -q install
+      # - pip install .
 
 script:
     - pytest --cov
