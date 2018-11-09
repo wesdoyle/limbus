@@ -1,10 +1,12 @@
 import os
 import re
 
+
 class SimpleTokenizer(object):
     """
     Tokenizes words given a string
     """
+
     def __init__(self):
         self.stop_words = self._get_stopwords()
 
@@ -18,7 +20,8 @@ class SimpleTokenizer(object):
         clean_sentence = re.sub(r"[^a-z0-9 ]", "", lowered_sent)
         return [word for word in clean_sentence.split() if word not in self.stop_words]
 
-    def _get_stopwords(self):
+    @staticmethod
+    def _get_stopwords():
         stopwords_path = os.environ.get("STOPWORDS_LIST")
         stopwords = []
         with open(stopwords_path) as f:
@@ -26,10 +29,12 @@ class SimpleTokenizer(object):
                 stopwords.append(line.strip())
         return stopwords
 
+
 class SimpleSentenceTokenizer(object):
     """
     Tokenizes sentences given string
     """
+
     def __init__(self):
         # TODO: Expand list of abbrevs
         # https://en.wikipedia.org/wiki/Lists_of_abbreviations
@@ -38,7 +43,6 @@ class SimpleSentenceTokenizer(object):
     def tokenize(self, sents):
         """
         Tokenizes a string of sentences
-        :param sentence: string sentences to tokenize
         :return: List<string> sentences
         """
         splitter = r"(?i)" + self._build_neg_lookbehind_predicate() + r"[^\w \,\;\{\}\[\]\&\^\%\$\#\@\*\/\\]"
@@ -56,7 +60,8 @@ class SimpleSentenceTokenizer(object):
 
         return neg_lookbehind_predicate
 
-    def _get_abbreviation_words(self):
+    @staticmethod
+    def _get_abbreviation_words():
         """
         Returns file containing abbreviated words as a Python list of those words
         """
@@ -66,7 +71,3 @@ class SimpleSentenceTokenizer(object):
             for line in f:
                 words.append(line.strip())
         return words
-
-
-
-

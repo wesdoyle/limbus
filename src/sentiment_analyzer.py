@@ -1,9 +1,11 @@
 import os
 
+
 class SimpleSentimentAnalyzer(object):
     """
     Responsible for scoring the sentiment polarity a list of tokens
     """
+
     def __init__(self):
         self.pos_words = self._get_words("POS_WORD_LIST")
         self.neg_words = self._get_words("NEG_WORD_LIST")
@@ -12,8 +14,6 @@ class SimpleSentimentAnalyzer(object):
     def score(self, tokens):
         """
         Returns a sentiment score for a provided list of string tokens
-        # TODO: account for tokens that invert the sentment polarity
-        # not, never, etc...
         """
         score = 0
         negation_polarity = 1
@@ -28,7 +28,8 @@ class SimpleSentimentAnalyzer(object):
             score = score / len(tokens)
         return score * negation_polarity
 
-    def _get_words(self, path):
+    @staticmethod
+    def _get_words(path):
         words = []
         with open(os.environ.get(path)) as f:
             for line in f:

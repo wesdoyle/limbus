@@ -1,5 +1,7 @@
-from tokenizers import SimpleTokenizer
 import pytest
+
+from src.tokenizers import SimpleTokenizer
+
 
 class TestTokenizer:
     """
@@ -7,12 +9,12 @@ class TestTokenizer:
     """
 
     @pytest.mark.parametrize("input, expected",
-            [
-                ("foo bar baz", ['foo', 'bar', 'baz']),
-                ("", []),
-                ("foobarbaz", ['foobarbaz']),
-                (" ", []),
-            ])
+                             [
+                                 ("foo bar baz", ['foo', 'bar', 'baz']),
+                                 ("", []),
+                                 ("foobarbaz", ['foobarbaz']),
+                                 (" ", []),
+                             ])
     def test_tokenizer_splits_string_sent_on_whitespace(self, input, expected):
         tokenizer = SimpleTokenizer()
         tokens = tokenizer.tokenize(input)

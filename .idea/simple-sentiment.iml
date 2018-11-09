@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.ipynb_checkpoints" />
+      <excludeFolder url="file://$MODULE_DIR$/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/SimpleSentimentAnalyzer.egg-info" />
+      <excludeFolder url="file://$MODULE_DIR$/Simple_Sentiment_Analyzer.egg-info" />
+      <excludeFolder url="file://$MODULE_DIR$/coverage.html" />
+      <excludeFolder url="file://$MODULE_DIR$/src/tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/tests/Simple_Sentiment_Analyzer.egg-info" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/env/lib/python3.6/site-packages/pandas/io/formats/templates" />
+      </list>
+    </option>
+  </component>
+  <component name="TestRunnerService">
+    <option name="projectConfiguration" value="pytest" />
+    <option name="PROJECT_TEST_RUNNER" value="pytest" />
+  </component>
+</module>

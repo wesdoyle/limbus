@@ -1,7 +1,10 @@
 from mock import patch
 import pytest
 
-from pipelines import SimplePipeline
+
+# noinspection PyUnusedLocal
+from src.pipelines import SimplePipeline
+
 
 class TestSimplePipeline:
 
@@ -54,14 +57,13 @@ class TestSimplePipeline:
         sut.word_tokenize.assert_called_once_with("foo")
         sut.score_sentiment.assert_called_once_with(1234)
 
-
     @pytest.mark.parametrize("input",
-            [
-                (['foo']),
-                (['foo', 'sent_tokenize']),
-                (['foo', 'bar']),
-            ]
-        )
+                             [
+                                 (['foo']),
+                                 (['foo', 'sent_tokenize']),
+                                 (['foo', 'bar']),
+                             ]
+                             )
     def test_simple_pipeline_should_invoke_sentence_tokenizer(self, input):
         input_text = "foo! bar baz, and. quux?"
         features = ['foo']
@@ -70,4 +72,3 @@ class TestSimplePipeline:
         with pytest.raises(AttributeError):
             sut.run()
             sut.sent_tokenize.assert_called_once_with(input_text)
-
