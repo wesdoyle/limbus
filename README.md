@@ -1,5 +1,6 @@
 # simple-sentiment
 
+[![Build Status](https://travis-ci.org/wesdoyle/simple-sentiment.svg?branch=master)](https://travis-ci.org/wesdoyle/simple-sentiment)
 [![codecov](https://codecov.io/gh/wesdoyle/simple-sentiment/branch/master/graph/badge.svg)](https://codecov.io/gh/wesdoyle/simple-sentiment)
 
 A tool for running natural language processing pipelines in Python
