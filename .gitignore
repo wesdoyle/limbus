@@ -114,3 +114,5 @@ dmypy.json
 .pyre/
 
 coverage.html/
+
+.idea/
