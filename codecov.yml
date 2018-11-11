@@ -1,0 +1,4 @@
+# codecov.io config
+
+ignore:
+  - "src/tests"  # ignore test files
