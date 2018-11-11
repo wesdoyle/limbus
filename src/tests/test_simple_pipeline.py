@@ -1,11 +1,11 @@
 from mock import patch
 import pytest
 
-
 # noinspection PyUnusedLocal
 from src.pipelines import SimplePipeline
 
 
+# noinspection PyUnresolvedReferences,PyUnusedLocal
 class TestSimplePipeline:
 
     @patch('src.pipelines.SimplePipeline.sent_tokenize')
