@@ -15,6 +15,7 @@ class SimplePipeline(object):
         """
         self.raw_text = raw_text
         self.features = features
+        self.output = None
 
     # noinspection PyUnusedLocal
     def run(self):
@@ -29,6 +30,8 @@ class SimplePipeline(object):
             except AttributeError:
                 print("SimplePipeline supports no feature named: {}"
                       .format(feature))
+
+        self.output = res
 
     @staticmethod
     def sent_tokenize(input_text):
