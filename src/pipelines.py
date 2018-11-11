@@ -15,6 +15,10 @@ class SimplePipeline(object):
         """
         self.raw_text = raw_text
         self.features = features
+
+        self.tokenized_sents = None
+        self.tokenized_words = None
+        self.sent_scores = None
         self.output = None
 
     # noinspection PyUnusedLocal
@@ -35,29 +39,31 @@ class SimplePipeline(object):
 
         self.output = res
 
-    @staticmethod
-    def sent_tokenize(input_text):
+    def sent_tokenize(self, input_text):
         """
         Invokes the tokenize method on SimpleSentenceTokenizer
         :param input_text: string text to tokenize
         """
         st = SimpleSentenceTokenizer()
-        return st.tokenize(input_text)
+        sents = st.tokenize(input_text)
+        self.tokenized_sents = sents
+        return sents
 
-    @staticmethod
-    def word_tokenize(input_texts):
+    def word_tokenize(self, input_texts):
         """
         Invokes the tokenize method on SimpleWordTokenizer
         :param input_text: string text to tokenize
         """
         st = SimpleTokenizer()
-        return [st.tokenize(text) for text in input_texts]
+        all_words = [st.tokenize(text) for text in input_texts]
+        self.tokenized_words = all_words
 
-    @staticmethod
-    def score_sentiment(input_texts):
+    def score_sentiment(self, input_texts):
         """
         Invokes the score method on the SimpleSentimentAnalyzer
         :param input_text: string text to sentiment score
         """
         sa = SimpleSentimentAnalyzer()
-        return [sa.score(text) for text in input_texts]
+        sent_scores = [sa.score(text) for text in input_texts]
+        self.sent_scores = sent_scores
+        return sent_scores
