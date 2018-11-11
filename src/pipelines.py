@@ -19,6 +19,7 @@ class SimplePipeline(object):
         self.tokenized_sents = None
         self.tokenized_words = None
         self.sent_scores = None
+        self.vocab_size = 0
 
         self.output = None
 
@@ -31,7 +32,6 @@ class SimplePipeline(object):
 
         for feature in self.features:
             try:
-                print("applying: {}".format(feature))
                 res = getattr(self, feature)(res)
 
             except AttributeError as e:
@@ -40,6 +40,10 @@ class SimplePipeline(object):
                       .format(feature))
 
         self.output = res
+
+        if self.tokenized_words:
+            flat_list = [item for sublist in self.tokenized_words for item in sublist]
+            self.vocab_size = len(set(flat_list))
 
     def sent_tokenize(self, input_text):
         """

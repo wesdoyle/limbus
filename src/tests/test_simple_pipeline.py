@@ -105,3 +105,19 @@ class TestSimplePipeline:
         sut.run()
         assert sut.output is None
 
+    @pytest.mark.parametrize("input_text, expected",
+            [
+                ("Foo! foo? foO!!", 1),
+                ("bar, bar, bar??? bar and bar or bar?", 1),
+                ("Really nice bicycle. Excellent horrible feature", 6),
+                ("", 0),
+                ("and", 0),
+                ("and or. but for be.", 0),
+            ])
+    def test_pipeline_calculates_vocab_size(self, input_text, expected):
+        features = ['sent_tokenize', 'word_tokenize', 'score_sentiment']
+        sut = SimplePipeline(input_text, features)
+        sut.run()
+        assert sut.vocab_size == expected
+
+
