@@ -26,7 +26,7 @@ class SimplePipeline(object):
             try:
                 res = getattr(self, feature)(res)
 
-            except AttributeError as e:
+            except AttributeError:
                 print("SimplePipeline supports no feature named: {}"
                       .format(feature))
 
