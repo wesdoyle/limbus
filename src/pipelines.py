@@ -25,6 +25,7 @@ class SimplePipeline(object):
         res = self.raw_text
         for feature in self.features:
             try:
+                print("applying: {}".format(feature))
                 res = getattr(self, feature)(res)
 
             except AttributeError:
