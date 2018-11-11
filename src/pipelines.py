@@ -28,7 +28,8 @@ class SimplePipeline(object):
                 print("applying: {}".format(feature))
                 res = getattr(self, feature)(res)
 
-            except AttributeError:
+            except AttributeError as e:
+                print(e)
                 print("SimplePipeline supports no feature named: {}"
                       .format(feature))
 
@@ -44,19 +45,19 @@ class SimplePipeline(object):
         return st.tokenize(input_text)
 
     @staticmethod
-    def word_tokenize(input_text):
+    def word_tokenize(input_texts):
         """
         Invokes the tokenize method on SimpleWordTokenizer
         :param input_text: string text to tokenize
         """
         st = SimpleTokenizer()
-        return st.tokenize(input_text)
+        return [st.tokenize(text) for text in input_texts]
 
     @staticmethod
-    def score_sentiment(input_text):
+    def score_sentiment(input_texts):
         """
         Invokes the score method on the SimpleSentimentAnalyzer
         :param input_text: string text to sentiment score
         """
         sa = SimpleSentimentAnalyzer()
-        return sa.score(input_text)
+        return [sa.score(text) for text in input_texts]
