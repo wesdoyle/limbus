@@ -25,7 +25,7 @@ class TestSimpleSentenceTokenizer(object):
                              [
                                  ("Mr. Smith went home? Yes! WAT.", ["Mr. Smith went home", "Yes", "WAT"]),
                                  ("Mrs. Smith went home with Mr. Smith.", ["Mrs. Smith went home with Mr. Smith"]),
-                                 ("Good, eg. Really Good. What?", ["Good, eg. Really Good", "What"]),
+                                 ("Good. Really Good. What?", ["Good", "Really Good", "What"]),
                                  ("!?....", []),
                                  ("Whoa!!!", ["Whoa"]),
                                  ("Whoa!!! What???", ["Whoa", "What"]),
