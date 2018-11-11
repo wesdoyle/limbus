@@ -87,3 +87,21 @@ class TestSimplePipeline:
         sut.run()
         assert sut.output is not None
 
+    def test_if_word_tokenize_receives_none_input_is_forwarded(self):
+        features = ['word_tokenize']
+        sut = SimplePipeline(None, features)
+        sut.run()
+        assert sut.output is None
+
+    def test_if_score_sentiment_receives_none_input_is_forwarded(self):
+        features = ['score_sentiment']
+        sut = SimplePipeline(None, features)
+        sut.run()
+        assert sut.output is None
+
+    def test_if_sent_tokenize_receives_none_input_is_forwarded(self):
+        features = ['sent_tokenize']
+        sut = SimplePipeline(None, features)
+        sut.run()
+        assert sut.output is None
+

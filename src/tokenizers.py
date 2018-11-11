@@ -46,7 +46,10 @@ class SimpleSentenceTokenizer(object):
         :return: List<string> sentences
         """
         splitter = r"(?i)" + self._build_neg_lookbehind_predicate() + r"[^\w \,\;\{\}\[\]\&\^\%\$\#\@\*\/\\]"
-        return [sent.strip() for sent in re.split(splitter, sents) if sent]
+        if sents:
+            return [sent.strip() for sent in re.split(splitter, sents) if sent]
+        else:
+            return None
 
     def _build_neg_lookbehind_predicate(self):
         """

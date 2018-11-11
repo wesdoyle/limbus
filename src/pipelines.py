@@ -19,6 +19,7 @@ class SimplePipeline(object):
         self.tokenized_sents = None
         self.tokenized_words = None
         self.sent_scores = None
+
         self.output = None
 
     # noinspection PyUnusedLocal
@@ -27,6 +28,7 @@ class SimplePipeline(object):
         Execute the transformation methods on attrs in the pipeline
         """
         res = self.raw_text
+
         for feature in self.features:
             try:
                 print("applying: {}".format(feature))
@@ -55,8 +57,12 @@ class SimplePipeline(object):
         :param input_text: string text to tokenize
         """
         st = SimpleTokenizer()
-        all_words = [st.tokenize(text) for text in input_texts]
-        self.tokenized_words = all_words
+        if input_texts:
+            all_words = [st.tokenize(text) for text in input_texts]
+            self.tokenized_words = all_words
+            return all_words
+        else:
+            return input_texts
 
     def score_sentiment(self, input_texts):
         """
@@ -64,6 +70,11 @@ class SimplePipeline(object):
         :param input_text: string text to sentiment score
         """
         sa = SimpleSentimentAnalyzer()
-        sent_scores = [sa.score(text) for text in input_texts]
-        self.sent_scores = sent_scores
-        return sent_scores
+
+        if input_texts:
+            sent_scores = [sa.score(text) for text in input_texts]
+            self.sent_scores = sent_scores
+            return sent_scores
+
+        else:
+            return input_texts
