@@ -45,10 +45,11 @@ class SimpleSentenceTokenizer(object):
         Tokenizes a string of sentences
         :return: List<string> sentences
         """
-        splitter = r"(?i)" + self._build_neg_lookbehind_predicate() + r"[^\w \,\;\{\}\[\]\&\^\%\$\#\@\*\/\\]"
+        splitter = r"(?i)" + self._build_neg_lookbehind_predicate() + r"[^\w\ `\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\]"
 
         if sents:
-            return [sent.strip() for sent in re.split(splitter, sents) if sent]
+            return [sent.strip() for sent in re.split(splitter, sents) if sent.strip()]
+
         else:
             return None
 
