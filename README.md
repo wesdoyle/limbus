@@ -42,6 +42,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Grab the sentences and scores from the pipeline object, which has been fit to a text sample.
+sents = pipline.tokenized_sents
+scores = pipeline.sent_scores
+
 # Prepare data from pipeline
 df = pd.DataFrame(list(zip(sents, scores)))
 df['time_series'] = df[1].cumsum()  # Taking the running cumulative sum of the sentiment score
