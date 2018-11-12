@@ -41,11 +41,14 @@ data = {'sents': df.index.values, 'polarity': df['time_series'].values}
 # Plot
 plt.figure(figsize=(16, 6), dpi=80)
 sns.set_style("whitegrid")
-sns.set_context("notebook", font_scale=1.24, rc={"lines.linewidth": 1.3})
+sns.set_context("notebook", font_scale=1.6, rc={"lines.linewidth": 1.3})
 graph = sns.lineplot(x="sents", y="polarity", data=data, legend='full')
-graph.set(xlabel='Sentence', ylabel='Cumulative Sentiment Polarity')
-
+graph.set(xlabel='Sentence', ylabel='Cumulative Sentiment Polarity', title="Running Sentiment of \"Alice in Wonderland\"")
 ```
+[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)
+
+[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)
+
 
 Positive and Negative word lists adapted from:
 > [https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html)
