@@ -49,7 +49,6 @@ graph.set(xlabel='Sentence', ylabel='Cumulative Sentiment Polarity', title="Runn
 
 [![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)
 
-
 Positive and Negative word lists adapted from:
 > [https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html)
 
