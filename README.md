@@ -6,6 +6,8 @@
 
 A tool for running natural language processing pipelines in Python.
 
+> Most of this was written live over the course of a 7-part TDD livestream video series on YouTube: [https://www.youtube.com/watch?v=pgWmEm2CNnw](https://www.youtube.com/watch?v=pgWmEm2CNnw)
+
 ### Tests
 > To run unit tests: `pytest`
 
@@ -66,9 +68,6 @@ graph.set(xlabel='Sentence', ylabel='Cumulative Sentiment Polarity', title="Runn
 [![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)
 
 [![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/moby.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/moby.png)
-
-### Links
-> Code up to [this commit](https://github.com/wesdoyle/simple-sentiment/commit/ee8b3d685acf517bc106aed984dd334015b31841) was coded live over the course of a 7-part livestream video series on YouTube: [https://www.youtube.com/watch?v=pgWmEm2CNnw](https://www.youtube.com/watch?v=pgWmEm2CNnw)
 
 ### References
 
