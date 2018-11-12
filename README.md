@@ -32,6 +32,8 @@ pipeline.run()
 
 # various features are now available as class attributes on `pipeline`:
 pipeline.vocab_size  # 2452
+pipeline.tokenized_sents[371]  # 'she found ample scope for admiration and delight'
+pipeline.sent_scores[371]  # 0.6
 ```
 
 The pipeline provides a useful object for downstream operations, like EDA:
@@ -56,11 +58,14 @@ plt.figure(figsize=(16, 6), dpi=80)
 sns.set_style("whitegrid")
 sns.set_context("notebook", font_scale=1.6, rc={"lines.linewidth": 1.3})
 graph = sns.lineplot(x="sents", y="polarity", data=data, legend='full')
-graph.set(xlabel='Sentence', ylabel='Cumulative Sentiment Polarity', title="Running Sentiment of \"Alice in Wonderland\"")
+graph.set(xlabel='Sentence', ylabel='Cumulative Sentiment Polarity', title="Running Sentiment of \"Frankenstein\"")
 ```
-[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)
 
 [![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)
+
+[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)
+
+[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/moby.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/moby.png)
 
 ### Links
 > Code up to [this commit](https://github.com/wesdoyle/simple-sentiment/commit/ee8b3d685acf517bc106aed984dd334015b31841) was coded live over the course of a 7-part livestream video series on YouTube: [https://www.youtube.com/watch?v=pgWmEm2CNnw](https://www.youtube.com/watch?v=pgWmEm2CNnw)
