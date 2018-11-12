@@ -6,6 +6,8 @@
 
 A tool for running natural language processing pipelines in Python.
 
+> To run tests: `pytest`
+
 Currenly supports pattern-matching methods for:
 *  Sentence extraction from raw text
 *  Word tokenization (builtin stopword removal)
