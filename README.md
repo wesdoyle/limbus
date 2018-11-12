@@ -7,9 +7,9 @@
 A tool for running natural language processing pipelines in Python.
 
 Currenly supports pattern-matching methods for:
-* Sentence extraction from raw text
-* Word tokenization (builtin stopword removal)
-* Sentence-based sentiment polarity analysis on lists of tokens
+*  Sentence extraction from raw text
+*  Word tokenization (builtin stopword removal)
+*  Sentence-based sentiment polarity analysis on lists of tokens
 
 The `pipelines` module exposes the SimplePipeline object, which can be used to pipe raw text data through assembled features.  Features are provided to a new instance of SimplePipeline along with initial raw text. The output of each feature in a pipeline is returned to the input param of the subsequent feature in the list.
 
