@@ -27,7 +27,11 @@ pipeline.run()
 
 # various features are now available as class attributes on `pipeline`:
 pipeline.vocab_size  # 2452
+```
 
+The pipeline provides a useful object for downstream operations, like EDA:
+
+```python
 # extacted data can be used for downstream ops, like EDA:
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -35,7 +39,7 @@ import seaborn as sns
 
 # Prepare data from pipeline
 df = pd.DataFrame(list(zip(sents, scores)))
-df['time_series'] = df[1].cumsum()
+df['time_series'] = df[1].cumsum()  # Taking the running cumulative sum of the sentiment score
 data = {'sents': df.index.values, 'polarity': df['time_series'].values}
 
 # Plot
