@@ -1,8 +1,8 @@
 # bluebook
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/32a76893bb5b407aad5c8e24816874f3)](https://app.codacy.com/app/wesdoyle/simple-sentiment?utm_source=github.com&utm_medium=referral&utm_content=wesdoyle/simple-sentiment&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/32a76893bb5b407aad5c8e24816874f3)](https://app.codacy.com/app/wesdoyle/bluebook?utm_source=github.com&utm_medium=referral&utm_content=wesdoyle/bluebook&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/wesdoyle/bluebook.svg?branch=master)](https://travis-ci.org/wesdoyle/bluebook)
-[![codecov](https://codecov.io/gh/wesdoyle/simple-sentiment/branch/master/graph/badge.svg)](https://codecov.io/gh/wesdoyle/simple-sentiment)
+[![codecov](https://codecov.io/gh/wesdoyle/bluebook/branch/master/graph/badge.svg)](https://codecov.io/gh/wesdoyle/bluebook)
 
 A tool for running natural language processing pipelines in Python.
 
@@ -63,11 +63,11 @@ graph = sns.lineplot(x="sents", y="polarity", data=data, legend='full')
 graph.set(xlabel='Sentence', ylabel='Cumulative Sentiment Polarity', title="Running Sentiment of \"Frankenstein\"")
 ```
 
-[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/frankenstein.png)
+[![Plot](https://raw.githubusercontent.com/wesdoyle/bluebook/master/images/frankenstein.png)](https://raw.githubusercontent.com/wesdoyle/bluebook/master/images/frankenstein.png)
 
-[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/alice.png)
+[![Plot](https://raw.githubusercontent.com/wesdoyle/bluebook/master/images/alice.png)](https://raw.githubusercontent.com/wesdoyle/bluebook/master/images/alice.png)
 
-[![Plot](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/moby.png)](https://raw.githubusercontent.com/wesdoyle/simple-sentiment/master/images/moby.png)
+[![Plot](https://raw.githubusercontent.com/wesdoyle/bluebook/master/images/moby.png)](https://raw.githubusercontent.com/wesdoyle/bluebook/master/images/moby.png)
 
 ### References
 
