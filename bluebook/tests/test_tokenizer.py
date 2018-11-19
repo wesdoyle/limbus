@@ -1,6 +1,6 @@
 import pytest
 
-from src.tokenizers import SimpleTokenizer
+from bluebook.tokenizers import SimpleTokenizer
 
 
 class TestTokenizer:

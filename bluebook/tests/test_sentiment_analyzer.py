@@ -1,6 +1,6 @@
 import pytest
 
-from src.sentiment_analyzer import SimpleSentimentAnalyzer
+from bluebook.sentiment_analyzer import SimpleSentimentAnalyzer
 
 
 class TestSentimentAnalyzer:

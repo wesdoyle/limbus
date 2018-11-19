@@ -1,5 +1,5 @@
-from src.sentiment_analyzer import SimpleSentimentAnalyzer
-from src.tokenizers import SimpleSentenceTokenizer, SimpleTokenizer
+from bluebook.sentiment_analyzer import SimpleSentimentAnalyzer
+from bluebook.tokenizers import SimpleSentenceTokenizer, SimpleTokenizer
 
 
 class SimplePipeline(object):
@@ -58,7 +58,7 @@ class SimplePipeline(object):
     def word_tokenize(self, input_texts):
         """
         Invokes the tokenize method on SimpleWordTokenizer
-        :param input_text: string text to tokenize
+        :param input_texts: list<string> text to tokenize
         """
         st = SimpleTokenizer()
         if input_texts:
@@ -71,7 +71,7 @@ class SimplePipeline(object):
     def score_sentiment(self, input_texts):
         """
         Invokes the score method on the SimpleSentimentAnalyzer
-        :param input_text: string text to sentiment score
+        :param input_texts: list<string> text to sentiment score
         """
         sa = SimpleSentimentAnalyzer()
 
