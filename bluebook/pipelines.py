@@ -1,5 +1,8 @@
+from os import cpu_count
+
 from bluebook.sentiment_analyzer import SimpleSentimentAnalyzer
 from bluebook.tokenizers import SimpleSentenceTokenizer, SimpleTokenizer
+from multiprocessing import Pool
 
 
 class SimplePipeline(object):
@@ -22,6 +25,8 @@ class SimplePipeline(object):
         self.vocab_size = 0
 
         self.output = None
+
+        self.pool = Pool(cpu_count())
 
     # noinspection PyUnusedLocal
     def run(self):
@@ -62,7 +67,7 @@ class SimplePipeline(object):
         """
         st = SimpleTokenizer()
         if input_texts:
-            all_words = [st.tokenize(text) for text in input_texts]
+            all_words = self.pool.map(func=st.tokenize, iterable=input_texts)
             self.tokenized_words = all_words
             return all_words
         else:
@@ -76,7 +81,7 @@ class SimplePipeline(object):
         sa = SimpleSentimentAnalyzer()
 
         if input_texts:
-            sent_scores = [sa.score(text) for text in input_texts]
+            sent_scores = self.pool.map(func=sa.score, iterable=input_texts)
             self.sent_scores = sent_scores
             return sent_scores
 
