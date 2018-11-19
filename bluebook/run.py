@@ -1,3 +1,7 @@
+"""
+Example script for running sentiment analysis on a string text sample
+"""
+
 from tokenizers import SimpleTokenizer
 from sentiment_analyzer import SimpleSentimentAnalyzer
 
