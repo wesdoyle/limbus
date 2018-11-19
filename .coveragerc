@@ -3,4 +3,5 @@ omit =
     */.local/*
     env/*
     tests/*
+    bluebook/tests/*
 
