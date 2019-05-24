@@ -1,5 +1,9 @@
 import os
 
+from .words.negation_words import negation_words
+from .words.negative_words import negative_words
+from .words.positive_words import positive_words
+
 
 class SimpleSentimentAnalyzer(object):
     """
@@ -7,11 +11,10 @@ class SimpleSentimentAnalyzer(object):
     """
 
     def __init__(self):
-        self.pos_words = self._get_words("POS_WORD_LIST")
-        self.neg_words = self._get_words("NEG_WORD_LIST")
-        self.negation_words = self._get_words("NEGATION_WORD_LIST")
+        pass
 
-    def score(self, tokens):
+    @staticmethod
+    def score(tokens):
         """
         Returns a sentiment score for a provided list of string tokens
         """
@@ -19,11 +22,11 @@ class SimpleSentimentAnalyzer(object):
         negation_polarity = 1
         if tokens:
             for token in tokens:
-                if token in self.negation_words:
+                if token in negation_words:
                     negation_polarity *= -1
-                if token in self.pos_words:
+                if token in positive_words:
                     score += 1
-                elif token in self.neg_words:
+                elif token in negative_words:
                     score -= 1
             score = score / len(tokens)
         return score * negation_polarity

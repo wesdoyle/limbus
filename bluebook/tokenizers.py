@@ -1,5 +1,7 @@
-import os
 import re
+
+from .words.stopwords import stopwords
+from .words.abbreviation_words import abbreviation_words
 
 
 class SimpleTokenizer(object):
@@ -8,9 +10,10 @@ class SimpleTokenizer(object):
     """
 
     def __init__(self):
-        self.stop_words = self._get_stopwords()
+        pass
 
-    def tokenize(self, sentence):
+    @staticmethod
+    def tokenize(sentence):
         """
         Tokenizes a sentence string
         :param sentence: string sentence to tokenize
@@ -18,16 +21,7 @@ class SimpleTokenizer(object):
         """
         lowered_sent = sentence.lower()
         clean_sentence = re.sub(r"[^a-z0-9 ]", "", lowered_sent)
-        return [word for word in clean_sentence.split() if word not in self.stop_words]
-
-    @staticmethod
-    def _get_stopwords():
-        stopwords_path = os.environ.get("STOPWORDS_LIST")
-        stopwords = []
-        with open(stopwords_path) as f:
-            for line in f:
-                stopwords.append(line.strip())
-        return stopwords
+        return [word for word in clean_sentence.split() if word not in stopwords]
 
 
 class SimpleSentenceTokenizer(object):
@@ -36,9 +30,7 @@ class SimpleSentenceTokenizer(object):
     """
 
     def __init__(self):
-        # TODO: Expand list of abbrevs
-        # https://en.wikipedia.org/wiki/Lists_of_abbreviations
-        self.abbrevs = self._get_abbreviation_words()
+        pass
 
     def tokenize(self, sents):
         """
@@ -46,8 +38,8 @@ class SimpleSentenceTokenizer(object):
         :return: List<string> sentences
         """
         splitter = r"(?i)" \
-            + self._build_neg_lookbehind_predicate() \
-            + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘]"
+                   + self._build_neg_lookbehind_predicate() \
+                   + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘]"
 
         if sents:
             # prep = [re.sub("\n", " ", sent) for sent in sents]
@@ -56,26 +48,16 @@ class SimpleSentenceTokenizer(object):
         else:
             return None
 
-    def _build_neg_lookbehind_predicate(self):
+    @staticmethod
+    def _build_neg_lookbehind_predicate():
         """
         Builds a string of negative lookbehinds for the list of
         abbreviated words on this sentence tokenizer
         """
         neg_lookbehind_predicate = r""
 
-        for abbrev in self.abbrevs:
+        for abbrev in abbreviation_words:
             neg_lookbehind_predicate += r"(?<!{})".format(abbrev)
 
         return neg_lookbehind_predicate
 
-    @staticmethod
-    def _get_abbreviation_words():
-        """
-        Returns file containing abbreviated words as a Python list of those words
-        """
-        words_path = os.environ.get("ABBREV_WORD_LIST")
-        words = []
-        with open(words_path) as f:
-            for line in f:
-                words.append(line.strip())
-        return words
