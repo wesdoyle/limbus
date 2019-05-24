@@ -30,11 +30,3 @@ class SimpleSentimentAnalyzer(object):
                     score -= 1
             score = score / len(tokens)
         return score * negation_polarity
-
-    @staticmethod
-    def _get_words(path):
-        words = []
-        with open(os.environ.get(path)) as f:
-            for line in f:
-                words.append(line.strip())
-        return words
