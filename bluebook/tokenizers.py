@@ -39,7 +39,7 @@ class SentenceTokenizer(object):
         """
         splitter = r"(?i)" \
                    + self._build_neg_lookbehind_predicate() \
-                   + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘]"
+                   + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘\"]"
 
         if sents:
             sents = re.sub(r'(?<!\w)([A-Z])\.', r'\1', sents)

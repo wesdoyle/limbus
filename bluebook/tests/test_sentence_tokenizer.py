@@ -12,6 +12,7 @@ class TestSentenceTokenizer(object):
                                  ("baz? bang! foo.", ["baz", "bang", "foo"]),
                                  ("baz. bang. foo.", ["baz", "bang", "foo"]),
                                  ("Foo bar baz. Quux bang foo", ["Foo bar baz", "Quux bang foo"]),
+                                 ("\"baz,\" he said. \"wow\".", ["\"baz,\" he said", "wow"]),
                                  ("Foo.", ["Foo"]),
                                  (".", []),
                                  ("", []),
