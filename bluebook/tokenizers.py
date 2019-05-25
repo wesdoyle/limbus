@@ -42,7 +42,7 @@ class SentenceTokenizer(object):
                    + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘\"]"
 
         if sents:
-            sents = re.sub(r'(?<!\w)([A-Z])\.', r'\1', sents)
+            sents = re.sub(r'(?<=)[.!?]\"', r'"\0', sents)  # {say "hello."} => {say "hello".}
             return [re.sub("\n", " ", sent.strip()) for sent in re.split(splitter, sents) if sent.strip()]
 
         else:
@@ -57,6 +57,6 @@ class SentenceTokenizer(object):
         neg_lookbehind_predicate = r""
 
         for abbrev in abbreviation_words:
-            neg_lookbehind_predicate += r"(?<!{})".format(abbrev)
+            neg_lookbehind_predicate += fr"(?<!{abbrev})"
 
         return neg_lookbehind_predicate

@@ -12,7 +12,7 @@ class TestSentenceTokenizer(object):
                                  ("baz? bang! foo.", ["baz", "bang", "foo"]),
                                  ("baz. bang. foo.", ["baz", "bang", "foo"]),
                                  ("Foo bar baz. Quux bang foo", ["Foo bar baz", "Quux bang foo"]),
-                                 ("\"baz,\" he said. \"wow\".", ["\"baz,\" he said", "wow"]),
+                                 ("\"baz,\" he said. \"wow.\" Baz.", ["\"baz,\" he said", "\"wow.\"", "Baz"]),
                                  ("Foo.", ["Foo"]),
                                  (".", []),
                                  ("", []),
@@ -35,9 +35,6 @@ class TestSentenceTokenizer(object):
 
                                  ("Good. Really Good. What?",
                                   ["Good", "Really Good", "What"]),
-
-                                 ('"What\'s wrong?" "Nothing at all."',
-                                  ['What\'s wrong', 'Nothing at all']),
 
                                  ("The U.S. is the United. The U.K., the U.S.A. is...",
                                   ["The US is the United", "The UK, the USA is"]),
