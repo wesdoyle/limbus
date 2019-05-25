@@ -1,11 +1,9 @@
-import os
-
 from .words.negation_words import negation_words
 from .words.negative_words import negative_words
 from .words.positive_words import positive_words
 
 
-class SimpleSentimentAnalyzer(object):
+class SentimentAnalyzer(object):
     """
     Responsible for scoring the sentiment polarity a list of tokens
     """

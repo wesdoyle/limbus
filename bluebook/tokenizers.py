@@ -4,7 +4,7 @@ from .words.stopwords import stopwords
 from .words.abbreviation_words import abbreviation_words
 
 
-class SimpleTokenizer(object):
+class Tokenizer(object):
     """
     Tokenizes words given a string
     """
@@ -24,7 +24,7 @@ class SimpleTokenizer(object):
         return [word for word in clean_sentence.split() if word not in stopwords]
 
 
-class SimpleSentenceTokenizer(object):
+class SentenceTokenizer(object):
     """
     Tokenizes sentences given string
     """
@@ -42,7 +42,7 @@ class SimpleSentenceTokenizer(object):
                    + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘]"
 
         if sents:
-            # prep = [re.sub("\n", " ", sent) for sent in sents]
+            sents = re.sub(r'(?<!\w)([A-Z])\.', r'\1', sents)
             return [re.sub("\n", " ", sent.strip()) for sent in re.split(splitter, sents) if sent.strip()]
 
         else:
@@ -60,4 +60,3 @@ class SimpleSentenceTokenizer(object):
             neg_lookbehind_predicate += r"(?<!{})".format(abbrev)
 
         return neg_lookbehind_predicate
-

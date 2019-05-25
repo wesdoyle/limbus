@@ -1,32 +1,32 @@
 import pytest
 
-from bluebook.sentiment_analyzer import SimpleSentimentAnalyzer
+from bluebook.sentiment_analyzer import SentimentAnalyzer
 
 
 class TestSentimentAnalyzer:
     def test_should_return_plus_1_when_tokens_are_all_positive(self):
         # given three "positive sentiment" tokens, the score should be positive
         tokens = ['good', 'happy', 'wonderful']
-        sa = SimpleSentimentAnalyzer()
+        sa = SentimentAnalyzer()
         score = sa.score(tokens)
         assert score == 1
 
     def test_should_return_minus_1_when_tokens_are_all_negative(self):
         # given three "negative sentiment" tokens, the score should be negative
         tokens = ['bad', 'unfortunate', 'horrible']
-        sa = SimpleSentimentAnalyzer()
+        sa = SentimentAnalyzer()
         score = sa.score(tokens)
         assert score == -1
 
     def test_should_return_zero_score_for_all_neutral_words(self):
         tokens = ['house', 'table', 'cat']
-        sa = SimpleSentimentAnalyzer()
+        sa = SentimentAnalyzer()
         score = sa.score(tokens)
         assert score == 0
 
     def test_returns_zero_if_token_len_is_zero(self):
         tokens = []
-        sa = SimpleSentimentAnalyzer()
+        sa = SentimentAnalyzer()
         score = sa.score(tokens)
         assert score == 0
 
@@ -39,7 +39,7 @@ class TestSentimentAnalyzer:
                                  (['nor', 'not', 'good'], False),
                              ])
     def test_inverts_sentiment_if_tokens_contain_negation_word(self, tokens, expected):
-        sa = SimpleSentimentAnalyzer()
+        sa = SentimentAnalyzer()
         score = sa.score(tokens)
         if expected is True:
             assert score < 0
@@ -54,7 +54,7 @@ class TestSentimentAnalyzer:
                                  (['nor', 'foo'], 0),
                              ])
     def test_if_sentiment_is_neutral_and_contains_negation_token_score_is_neutral(self, tokens, expected):
-        sa = SimpleSentimentAnalyzer()
+        sa = SentimentAnalyzer()
         score = sa.score(tokens)
         assert score == expected
 
@@ -65,6 +65,6 @@ class TestSentimentAnalyzer:
                                  (['not', 'bad', 'terrible', 'annoying', 'foo'], 0.6),
                              ])
     def test_score_is_fractional_for_tokens_with_non_unity_net_sentiment(self, tokens, expected):
-        sa = SimpleSentimentAnalyzer()
+        sa = SentimentAnalyzer()
         score = sa.score(tokens)
         assert score == expected

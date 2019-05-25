@@ -2,17 +2,17 @@ from mock import patch
 import pytest
 
 # noinspection PyUnusedLocal
-from bluebook.pipelines import SimplePipeline
+from bluebook.pipelines import NlpPipeline
 
 
 # noinspection PyUnresolvedReferences,PyUnusedLocal
-class TestSimplePipeline:
+class TestNlpPipeline:
 
     @patch('bluebook.pipelines.SimplePipeline.sent_tokenize')
     def test_should_invoke_sentence_tokenizer(self, mock_st):
         input_text = "foo! bar baz, and. quux?"
         features = ['sent_tokenize']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         sut.run()
         sut.sent_tokenize.assert_called_once_with(input_text)
 
@@ -20,7 +20,7 @@ class TestSimplePipeline:
     def test_should_invoke_word_tokenizer(self, mock_wt):
         input_text = "foo! bar baz, and. quux?"
         features = ['word_tokenize']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         sut.run()
         sut.word_tokenize.assert_called_once_with(input_text)
 
@@ -28,7 +28,7 @@ class TestSimplePipeline:
     def test_should_invoke_score_sentiment(self, mock_ss):
         input_text = "Good stuff"
         features = ['score_sentiment']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         sut.run()
         sut.score_sentiment.assert_called_once_with(input_text)
 
@@ -38,7 +38,7 @@ class TestSimplePipeline:
         mock_st.return_value = "foo"
         input_text = "foo! bar baz, and. quux?"
         features = ['sent_tokenize', 'word_tokenize']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         sut.run()
         sut.sent_tokenize.assert_called_once_with(input_text)
         sut.word_tokenize.assert_called_once_with("foo")
@@ -51,7 +51,7 @@ class TestSimplePipeline:
         mock_wt.return_value = 1234
         input_text = "foo! bar baz, and. quux?"
         features = ['sent_tokenize', 'word_tokenize', 'score_sentiment']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         sut.run()
         sut.sent_tokenize.assert_called_once_with(input_text)
         sut.word_tokenize.assert_called_once_with("foo")
@@ -67,7 +67,7 @@ class TestSimplePipeline:
     def test_should_invoke_sentence_tokenizer(self, input):
         input_text = "foo! bar baz, and. quux?"
         features = ['foo']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
 
         with pytest.raises(AttributeError):
             sut.run()
@@ -76,31 +76,31 @@ class TestSimplePipeline:
     def test_should_have_none_output_when_new(self):
         input_text = "foo! bar baz, and. quux?"
         features = ['sent_tokenize']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         assert sut.output is None
 
     def test_should_store_final_result_on_self_after_run(self):
         input_text = "foo! bar baz, and. quux?"
         features = ['sent_tokenize']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         sut.run()
         assert sut.output is not None
 
     def test_if_word_tokenize_receives_none_input_is_forwarded(self):
         features = ['word_tokenize']
-        sut = SimplePipeline(None, features)
+        sut = NlpPipeline(None, features)
         sut.run()
         assert sut.output is None
 
     def test_if_score_sentiment_receives_none_input_is_forwarded(self):
         features = ['score_sentiment']
-        sut = SimplePipeline(None, features)
+        sut = NlpPipeline(None, features)
         sut.run()
         assert sut.output is None
 
     def test_if_sent_tokenize_receives_none_input_is_forwarded(self):
         features = ['sent_tokenize']
-        sut = SimplePipeline(None, features)
+        sut = NlpPipeline(None, features)
         sut.run()
         assert sut.output is None
 
@@ -115,6 +115,6 @@ class TestSimplePipeline:
                              ])
     def test_pipeline_calculates_vocab_size(self, input_text, expected):
         features = ['sent_tokenize', 'word_tokenize', 'score_sentiment']
-        sut = SimplePipeline(input_text, features)
+        sut = NlpPipeline(input_text, features)
         sut.run()
         assert sut.vocab_size == expected
