@@ -1,11 +1,9 @@
 from setuptools import setup, find_packages
 
-setup(name="bluebook", version="0.0.1", packages=find_packages())
-
 from distutils.core import setup
 setup(
         name = 'bluebook',
-        packages = ['bluebook'],
+        packages = find_packages(),
         version = '0.0.1',
         license='Apache',
         description = 'A library for simple text-based natural language processing tasks',
