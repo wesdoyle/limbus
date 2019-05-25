@@ -4,11 +4,13 @@ import pytest
 # noinspection PyUnusedLocal
 from bluebook.pipelines import NlpPipeline
 
+# TODO Rewrite tests to isolate dependencies rather than internal function calls
+
 
 # noinspection PyUnresolvedReferences,PyUnusedLocal
 class TestNlpPipeline:
 
-    @patch('bluebook.pipelines.SimplePipeline.sent_tokenize')
+    @patch('bluebook.pipelines.NlpPipeline.sent_tokenize')
     def test_should_invoke_sentence_tokenizer(self, mock_st):
         input_text = "foo! bar baz, and. quux?"
         features = ['sent_tokenize']
@@ -16,7 +18,7 @@ class TestNlpPipeline:
         sut.run()
         sut.sent_tokenize.assert_called_once_with(input_text)
 
-    @patch('bluebook.pipelines.SimplePipeline.word_tokenize')
+    @patch('bluebook.pipelines.NlpPipeline.word_tokenize')
     def test_should_invoke_word_tokenizer(self, mock_wt):
         input_text = "foo! bar baz, and. quux?"
         features = ['word_tokenize']
@@ -24,7 +26,7 @@ class TestNlpPipeline:
         sut.run()
         sut.word_tokenize.assert_called_once_with(input_text)
 
-    @patch('bluebook.pipelines.SimplePipeline.score_sentiment')
+    @patch('bluebook.pipelines.NlpPipeline.score_sentiment')
     def test_should_invoke_score_sentiment(self, mock_ss):
         input_text = "Good stuff"
         features = ['score_sentiment']
@@ -32,8 +34,8 @@ class TestNlpPipeline:
         sut.run()
         sut.score_sentiment.assert_called_once_with(input_text)
 
-    @patch('bluebook.pipelines.SimplePipeline.word_tokenize')
-    @patch('bluebook.pipelines.SimplePipeline.sent_tokenize')
+    @patch('bluebook.pipelines.NlpPipeline.word_tokenize')
+    @patch('bluebook.pipelines.NlpPipeline.sent_tokenize')
     def test_should_invoke_two_features_in_order(self, mock_st, mock_wt):
         mock_st.return_value = "foo"
         input_text = "foo! bar baz, and. quux?"
@@ -43,9 +45,9 @@ class TestNlpPipeline:
         sut.sent_tokenize.assert_called_once_with(input_text)
         sut.word_tokenize.assert_called_once_with("foo")
 
-    @patch('bluebook.pipelines.SimplePipeline.score_sentiment')
-    @patch('bluebook.pipelines.SimplePipeline.word_tokenize')
-    @patch('bluebook.pipelines.SimplePipeline.sent_tokenize')
+    @patch('bluebook.pipelines.NlpPipeline.score_sentiment')
+    @patch('bluebook.pipelines.NlpPipeline.word_tokenize')
+    @patch('bluebook.pipelines.NlpPipeline.sent_tokenize')
     def test_should_invoke_three_features_in_order(self, mock_st, mock_wt, mock_ss):
         mock_st.return_value = "foo"
         mock_wt.return_value = 1234
