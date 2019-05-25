@@ -9,7 +9,7 @@ A tool for running natural language processing pipelines in Python.
 Most of this was written live over the course of a 7-part TDD livestream video series on YouTube: [https://www.youtube.com/watch?v=pgWmEm2CNnw](https://www.youtube.com/watch?v=pgWmEm2CNnw)
 
 ### Tests
-> To run unit tests: `pytest`
+To run unit tests: `$ pytest`
 
 ### Functionality
 Currenly supports pattern-matching methods for:
