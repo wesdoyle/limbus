@@ -42,6 +42,7 @@ class SentenceTokenizer(object):
                    + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘\"]"
 
         if sents:
+            sents = re.sub(r'(?<!\w)([A-Z])\.', r'\1', sents)  # {U.S.A.} => {USA}
             sents = re.sub(r'(?<=)[.!?]\"', r'"\0', sents)  # {say "hello."} => {say "hello".}
             return [re.sub("\n", " ", sent.strip()) for sent in re.split(splitter, sents) if sent.strip()]
 
