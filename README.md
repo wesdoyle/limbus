@@ -1,4 +1,4 @@
-# bluebook :blue_book:
+# Limbus
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/32a76893bb5b407aad5c8e24816874f3)](https://app.codacy.com/app/wesdoyle/bluebook?utm_source=github.com&utm_medium=referral&utm_content=wesdoyle/bluebook&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/wesdoyle/bluebook.svg?branch=master)](https://travis-ci.org/wesdoyle/bluebook)
@@ -6,7 +6,7 @@
 
 A tool for running natural language processing pipelines in Python.
 
-Most of this was written live over the course of a 7-part TDD livestream video series on YouTube: [https://www.youtube.com/watch?v=pgWmEm2CNnw](https://www.youtube.com/watch?v=pgWmEm2CNnw)
+The initial version of this project was written over the course of a 7-part TDD livestream video series on YouTube: [https://www.youtube.com/watch?v=pgWmEm2CNnw](https://www.youtube.com/watch?v=pgWmEm2CNnw)
 
 ### Tests
 To run unit tests: `$ pytest`
