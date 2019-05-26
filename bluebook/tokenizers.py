@@ -39,11 +39,26 @@ class SentenceTokenizer(object):
         """
         splitter = r"(?i)" \
                    + self._build_neg_lookbehind_predicate() \
-                   + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\’\‘\"]"
+                   + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\–\—\−\’\‘\"]"
 
         if sents:
+            ' '.join(sents.split())
+
+            sents = sents.replace(u'\xa0', u' ')
+            sents = sents.replace('\n', ' ')
+            sents = sents.replace('*', '')
+            sents = sents.replace('\'\'\'', '')
+            sents = sents.replace('\'\'', '')
+
+            sents = re.sub(r'(\s)', r' ', sents)  # {U.S.A.} => {USA}
             sents = re.sub(r'(?<!\w)([A-Z])\.', r'\1', sents)  # {U.S.A.} => {USA}
             sents = re.sub(r'(?<=)[.!?]\"', r'"\0', sents)  # {say "hello."} => {say "hello".}
+            sents = re.sub(r'(?<!\w)(\(c\.)', r'\(c ', sents)  # {(c.} => {c }
+            sents = re.sub(r'(?<!\w)(pp.)', r'pp', sents)
+            sents = re.sub(r'(?<!\w)(i\.e\.)', r'ie', sents)
+            sents = re.sub(r'(?<!\w)(e\.g\.)', r'eg', sents)
+            sents = re.sub(r'(?<!\w)(pg\.)', r'pg', sents)
+
             return [re.sub("\n", " ", sent.strip()) for sent in re.split(splitter, sents) if sent.strip()]
 
         else:
