@@ -1,6 +1,6 @@
 import pytest
 
-from bluebook.sentiment_analyzer import SentimentAnalyzer
+from limbus.sentiment_analyzer import SentimentAnalyzer
 
 
 class TestSentimentAnalyzer:

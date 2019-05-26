@@ -2,7 +2,7 @@ import pytest
 
 
 # noinspection PyShadowingBuiltins
-from bluebook.tokenizers import SentenceTokenizer
+from limbus.tokenizers import SentenceTokenizer
 
 
 class TestSentenceTokenizer(object):

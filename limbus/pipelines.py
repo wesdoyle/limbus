@@ -1,7 +1,7 @@
 from os import cpu_count
 
-from bluebook.sentiment_analyzer import SentimentAnalyzer
-from bluebook.tokenizers import SentenceTokenizer, Tokenizer
+from limbus.sentiment_analyzer import SentimentAnalyzer
+from limbus.tokenizers import SentenceTokenizer, Tokenizer
 from multiprocessing import Pool
 
 

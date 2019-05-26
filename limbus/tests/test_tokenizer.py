@@ -1,6 +1,6 @@
 import pytest
 
-from bluebook.tokenizers import Tokenizer
+from limbus.tokenizers import Tokenizer
 
 
 class TestTokenizer:

@@ -1,4 +1,4 @@
 # codecov.io config
 
 ignore:
-  - "bluebook/tests"  # ignore test files
+  - "limbus/tests"  # ignore test files
