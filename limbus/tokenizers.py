@@ -37,29 +37,37 @@ class SentenceTokenizer(object):
         Tokenizes a string of sentences
         :return: List<string> sentences
         """
-        splitter = r"(?i)" \
-                   + self._build_neg_lookbehind_predicate() \
-                   + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\–\—\−\’\‘\"]"
+        splitter = (
+            r"(?i)"
+            + self._build_neg_lookbehind_predicate()
+            + r"[^\w \n\(\)\`\'\,\;\{\}\[\]\&\^\%\$\#\@\*\/\\\-\–\—\−\’\‘\"]"
+        )
 
         if sents:
-            ' '.join(sents.split())
+            " ".join(sents.split())
 
-            sents = sents.replace(u'\xa0', u' ')
-            sents = sents.replace('\n', ' ')
-            sents = sents.replace('*', '')
-            sents = sents.replace('\'\'\'', '')
-            sents = sents.replace('\'\'', '')
+            sents = sents.replace("\xa0", " ")
+            sents = sents.replace("\n", " ")
+            sents = sents.replace("*", "")
+            sents = sents.replace("'''", "")
+            sents = sents.replace("''", "")
 
-            sents = re.sub(r'(\s)', r' ', sents)  # {U.S.A.} => {USA}
-            sents = re.sub(r'(?<!\w)([A-Z])\.', r'\1', sents)  # {U.S.A.} => {USA}
-            sents = re.sub(r'(?<=)[.!?]\"', r'"\0', sents)  # {say "hello."} => {say "hello".}
-            sents = re.sub(r'(?<!\w)(\(c\.)', r'\(c ', sents)  # {(c.} => {c }
-            sents = re.sub(r'(?<!\w)(pp.)', r'pp', sents)
-            sents = re.sub(r'(?<!\w)(i\.e\.)', r'ie', sents)
-            sents = re.sub(r'(?<!\w)(e\.g\.)', r'eg', sents)
-            sents = re.sub(r'(?<!\w)(pg\.)', r'pg', sents)
+            sents = re.sub(r"(\s)", r" ", sents)  # {U.S.A.} => {USA}
+            sents = re.sub(r"(?<!\w)([A-Z])\.", r"\1", sents)  # {U.S.A.} => {USA}
+            sents = re.sub(
+                r"(?<=)[.!?]\"", r'"\0', sents
+            )  # {say "hello."} => {say "hello".}
+            sents = re.sub(r"(?<!\w)(\(c\.)", r"\(c ", sents)  # {(c.} => {c }
+            sents = re.sub(r"(?<!\w)(pp.)", r"pp", sents)
+            sents = re.sub(r"(?<!\w)(i\.e\.)", r"ie", sents)
+            sents = re.sub(r"(?<!\w)(e\.g\.)", r"eg", sents)
+            sents = re.sub(r"(?<!\w)(pg\.)", r"pg", sents)
 
-            return [re.sub("\n", " ", sent.strip()) for sent in re.split(splitter, sents) if sent.strip()]
+            return [
+                re.sub("\n", " ", sent.strip())
+                for sent in re.split(splitter, sents)
+                if sent.strip()
+            ]
 
         else:
             return None
@@ -67,7 +75,7 @@ class SentenceTokenizer(object):
     @staticmethod
     def _build_neg_lookbehind_predicate():
         """
-        Builds a string of negative lookbehinds for the list of
+        Builds a string of negative look-behinds for the list of
         abbreviated words on this sentence tokenizer
         """
         neg_lookbehind_predicate = r""

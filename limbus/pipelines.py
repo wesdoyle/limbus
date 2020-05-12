@@ -41,8 +41,7 @@ class NlpPipeline(object):
 
             except AttributeError as e:
                 print(e)
-                print("SimplePipeline supports no feature named: {}"
-                      .format(feature))
+                print("SimplePipeline supports no feature named: {}".format(feature))
 
         self.output = res
 
