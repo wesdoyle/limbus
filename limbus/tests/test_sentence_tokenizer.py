@@ -7,7 +7,7 @@ from limbus.tokenizers import SentenceTokenizer
 
 class TestSentenceTokenizer(object):
     @pytest.mark.parametrize(
-        "input, expected",
+        "inp, expected",
         [
             ("baz! bang. foo.", ["baz", "bang", "foo"]),
             ("baz? bang! foo.", ["baz", "bang", "foo"]),
@@ -30,7 +30,7 @@ class TestSentenceTokenizer(object):
         assert expected == result
 
     @pytest.mark.parametrize(
-        "input, expected",
+        "inp, expected",
         [
             (
                 "Mr. Smith went home? Yes! WAT.",
