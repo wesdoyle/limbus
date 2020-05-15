@@ -7,7 +7,7 @@ setup(
     packages=find_packages(),
     version="0.0.1",
     license="Apache",
-    description="A library for simple text-based natural language processing tasks",
+    description="A library for simple raw text NLP tasks",
     author="Wes Doyle",
     url="https://github.com/user/wesdoyle",
     keywords=["nlp", "natural-language-processing", "sentiment-analysis"],

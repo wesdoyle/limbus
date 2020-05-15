@@ -53,9 +53,9 @@ class TestSentimentAnalyzer:
             assert score == 0
 
     @pytest.mark.parametrize(
-        "tokens, expected", [(["nor"], 0), (["nor", "foo"], 0),]
+        "tokens, expected", [(["nor"], 0), (["nor", "foo"], 0), ]
     )
-    def test_if_sentiment_is_neutral_and_contains_negation_token_score_is_neutral(
+    def test_if_sentiment_is_neutral_and_contains_neg_tok_score_is_neutral(
         self, tokens, expected
     ):
         sa = SentimentAnalyzer()

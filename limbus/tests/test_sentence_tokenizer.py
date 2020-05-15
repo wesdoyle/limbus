@@ -23,10 +23,10 @@ class TestSentenceTokenizer(object):
         ],
     )
     def test_splits_sentence_strings_on_sentence_punctuation(
-        self, input, expected
+        self, inp, expected
     ):
         sent_tokenizer = SentenceTokenizer()
-        result = sent_tokenizer.tokenize(input)
+        result = sent_tokenizer.tokenize(inp)
         assert expected == result
 
     @pytest.mark.parametrize(
@@ -55,8 +55,8 @@ class TestSentenceTokenizer(object):
         ],
     )
     def test_splits_sentence_strings_on_sentence_punctuation(
-        self, input, expected
+        self, inp, expected
     ):
         sent_tokenizer = SentenceTokenizer()
-        result = sent_tokenizer.tokenize(input)
+        result = sent_tokenizer.tokenize(inp)
         assert expected == result

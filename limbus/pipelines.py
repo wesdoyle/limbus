@@ -12,7 +12,7 @@ class NlpPipeline(object):
 
     def __init__(self, raw_text, features):
         """
-        :param: input_text: string raw text document containing one or more sentences
+        :param: input_text: string raw text document of one or more sents
         :param: features: list<string> features to run in pipeline
 
         """
