@@ -41,12 +41,18 @@ class NlpPipeline(object):
 
             except AttributeError as e:
                 print(e)
-                print("SimplePipeline supports no feature named: {}".format(feature))
+                print(
+                    "SimplePipeline supports no feature named: {}".format(
+                        feature
+                    )
+                )
 
         self.output = res
 
         if self.tokenized_words:
-            flat_list = [item for sublist in self.tokenized_words for item in sublist]
+            flat_list = [
+                item for sublist in self.tokenized_words for item in sublist
+            ]
             self.vocab_size = len(set(flat_list))
 
     def sent_tokenize(self, input_text):

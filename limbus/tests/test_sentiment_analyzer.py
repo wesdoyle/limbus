@@ -40,7 +40,9 @@ class TestSentimentAnalyzer:
             (["nor", "not", "good"], False),
         ],
     )
-    def test_inverts_sentiment_if_tokens_contain_negation_word(self, tokens, expected):
+    def test_inverts_sentiment_if_tokens_contain_negation_word(
+        self, tokens, expected
+    ):
         sa = SentimentAnalyzer()
         score = sa.score(tokens)
         if expected is True:
@@ -50,7 +52,9 @@ class TestSentimentAnalyzer:
         else:
             assert score == 0
 
-    @pytest.mark.parametrize("tokens, expected", [(["nor"], 0), (["nor", "foo"], 0),])
+    @pytest.mark.parametrize(
+        "tokens, expected", [(["nor"], 0), (["nor", "foo"], 0),]
+    )
     def test_if_sentiment_is_neutral_and_contains_negation_token_score_is_neutral(
         self, tokens, expected
     ):

@@ -21,7 +21,9 @@ class Tokenizer(object):
         """
         lowered_sent = sentence.lower()
         clean_sentence = re.sub(r"[^a-z0-9 ]", "", lowered_sent)
-        return [word for word in clean_sentence.split() if word not in stopwords]
+        return [
+            word for word in clean_sentence.split() if word not in stopwords
+        ]
 
 
 class SentenceTokenizer(object):
@@ -53,7 +55,9 @@ class SentenceTokenizer(object):
             sents = sents.replace("''", "")
 
             sents = re.sub(r"(\s)", r" ", sents)  # {U.S.A.} => {USA}
-            sents = re.sub(r"(?<!\w)([A-Z])\.", r"\1", sents)  # {U.S.A.} => {USA}
+            sents = re.sub(
+                r"(?<!\w)([A-Z])\.", r"\1", sents
+            )  # {U.S.A.} => {USA}
             sents = re.sub(
                 r"(?<=)[.!?]\"", r'"\0', sents
             )  # {say "hello."} => {say "hello".}

@@ -9,7 +9,6 @@ from limbus.pipelines import NlpPipeline
 
 # noinspection PyUnresolvedReferences,PyUnusedLocal
 class TestNlpPipeline:
-
     @pytest.mark.parametrize(
         "input", [(["foo"]), (["foo", "sent_tokenize"]), (["foo", "bar"]),]
     )

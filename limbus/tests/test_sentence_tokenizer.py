@@ -13,13 +13,18 @@ class TestSentenceTokenizer(object):
             ("baz? bang! foo.", ["baz", "bang", "foo"]),
             ("baz. bang. foo.", ["baz", "bang", "foo"]),
             ("Foo bar baz. Quux bang foo", ["Foo bar baz", "Quux bang foo"]),
-            ('"baz," he said. "wow." Baz.', ['"baz," he said', '"wow."', "Baz"]),
+            (
+                '"baz," he said. "wow." Baz.',
+                ['"baz," he said', '"wow."', "Baz"],
+            ),
             ("Foo.", ["Foo"]),
             (".", []),
             ("", []),
         ],
     )
-    def test_splits_sentence_strings_on_sentence_punctuation(self, input, expected):
+    def test_splits_sentence_strings_on_sentence_punctuation(
+        self, input, expected
+    ):
         sent_tokenizer = SentenceTokenizer()
         result = sent_tokenizer.tokenize(input)
         assert expected == result
@@ -27,7 +32,10 @@ class TestSentenceTokenizer(object):
     @pytest.mark.parametrize(
         "input, expected",
         [
-            ("Mr. Smith went home? Yes! WAT.", ["Mr. Smith went home", "Yes", "WAT"]),
+            (
+                "Mr. Smith went home? Yes! WAT.",
+                ["Mr. Smith went home", "Yes", "WAT"],
+            ),
             ("Foo bar? I didn't know that.", ["Foo bar", "I didn't know that"]),
             (
                 "Mrs. Smith went home with Mr. Smith.",
@@ -43,7 +51,9 @@ class TestSentenceTokenizer(object):
             ("Whoa!!! What???", ["Whoa", "What"]),
         ],
     )
-    def test_splits_sentence_strings_on_sentence_punctuation(self, input, expected):
+    def test_splits_sentence_strings_on_sentence_punctuation(
+        self, input, expected
+    ):
         sent_tokenizer = SentenceTokenizer()
         result = sent_tokenizer.tokenize(input)
         assert expected == result
