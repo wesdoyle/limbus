@@ -36,7 +36,10 @@ class TestSentenceTokenizer(object):
                 "Mr. Smith went home? Yes! WAT.",
                 ["Mr. Smith went home", "Yes", "WAT"],
             ),
-            ("Foo bar? I didn't know that.", ["Foo bar", "I didn't know that"]),
+            (
+                "Foo bar? I didn't know that.",
+                ["Foo bar", "I didn't know that"],
+            ),
             (
                 "Mrs. Smith went home with Mr. Smith.",
                 ["Mrs. Smith went home with Mr. Smith"],
