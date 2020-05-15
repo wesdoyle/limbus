@@ -54,7 +54,7 @@ class TestSentenceTokenizer(object):
             ("Whoa!!! What???", ["Whoa", "What"]),
         ],
     )
-    def test_splits_sentence_strings_on_sentence_punctuation(
+    def test_splits_sentence_strings_on_sentence_punctuation_multi(
         self, inp, expected
     ):
         sent_tokenizer = SentenceTokenizer()
