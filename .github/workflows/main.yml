@@ -17,7 +17,7 @@ jobs:
       - name: Build on Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix-python-version }}
+          python-version: ${{ matrix.python-version }}
 
       - name: pip install dependencies
         run: |
