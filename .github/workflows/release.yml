@@ -36,8 +36,12 @@ jobs:
         run: |
           python setup.py sdist
 
+      - name: get release name
+        id: get_release_name
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
       - name: upload build artifact
         uses: actions/upload-artifact@v1
         with:
-            name: limbus-${{ github.ref }}
+            name: limbus-${{ steps.get_release_name.outputs.VERSION }}
             path: dist/*tar.gz
