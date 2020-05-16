@@ -43,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
             name: limbus-${{ github.ref }}
-        path: dist/*tar.gz
+            path: dist/*tar.gz
