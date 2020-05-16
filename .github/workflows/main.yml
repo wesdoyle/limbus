@@ -27,7 +27,7 @@ jobs:
 
       - name: run flake8 linter
         run: |
-          flake8 . --statistics
+          flake8 .
 
       - name: run unit tests
         run: |
