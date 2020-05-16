@@ -15,11 +15,11 @@ class TestSentenceTokenizer(object):
             ("Foo bar baz. Quux bang foo", ["Foo bar baz", "Quux bang foo"]),
             (
                 '"baz," he said. "wow." Baz.',
-                ['"baz," he said', '"wow."', "Baz"],
+                ['"baz," he said', '"wow"', "Baz"],
             ),
             ("Foo.", ["Foo"]),
             (".", []),
-            ("", []),
+            ("", None),
         ],
     )
     def test_splits_sentence_strings_on_sentence_punctuation(

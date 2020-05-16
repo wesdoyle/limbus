@@ -1,4 +1,4 @@
-name: Python post-push
+name: Python test
 
 on:
   [push]
