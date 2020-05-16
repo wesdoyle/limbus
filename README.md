@@ -1,7 +1,7 @@
 # Limbus
 
-[![Build Status](https://travis-ci.org/wesdoyle/limbus.svg?branch=master)](https://travis-ci.org/wesdoyle/limbus)
 [![codecov](https://codecov.io/gh/wesdoyle/limbus/branch/master/graph/badge.svg)](https://codecov.io/gh/wesdoyle/limbus)
+![Build](https://github.com/wesdoyle/limbus/workflows/Build/badge.svg)
 
 A tool for running natural language processing pipelines in Python.
 
