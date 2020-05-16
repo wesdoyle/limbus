@@ -2,7 +2,7 @@ name: Limbus build and test
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
 
