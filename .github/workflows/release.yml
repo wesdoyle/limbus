@@ -2,7 +2,7 @@ name: Limbus build and test
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
 
@@ -41,8 +41,6 @@ jobs:
 
       - name: upload build artifact
         uses: actions/upload-artifact@v1
-        env:
-          LIMBUS_VERSION: ${{ python setup.py --version }}
         with:
-            name: latest-build-$LIMBUS_VERSION
-        path: dist/*.gz
+            name: limbus-${{ gitub.ref }}
+        path: dist/*tar.gz
