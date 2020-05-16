@@ -41,7 +41,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
       - name: upload build artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
             name: limbus-${{ steps.get_release_name.outputs.VERSION }}
             path: dist/*
