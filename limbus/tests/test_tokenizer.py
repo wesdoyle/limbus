@@ -17,12 +17,16 @@ class TestTokenizer:
             (" ", []),
         ],
     )
-    def test_tokenizer_splits_string_sent_on_whitespace(self, input, expected):
+    def test_tokenizer_splits_string_sent_on_whitespace(
+        self, input, expected
+    ):
         tokenizer = Tokenizer()
         tokens = tokenizer.tokenize(input)
         assert expected == tokens
 
-    def test_tokenizer_splits_string_sent_on_whitespace_case_insensitive(self):
+    def test_tokenizer_splits_string_sent_on_whitespace_case_insensitive(
+        self,
+    ):
         input_sent = "foO BAr bAZ"
         tokenizer = Tokenizer()
         tokens = tokenizer.tokenize(input_sent)

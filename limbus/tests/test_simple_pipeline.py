@@ -1,17 +1,19 @@
-from mock import patch
 import pytest
 
 # noinspection PyUnusedLocal
 from limbus.pipelines import NlpPipeline
 
-# TODO Rewrite tests to isolate dependencies rather than internal function calls
+# TODO Rewrite tests to isolate deps rather than internal function calls
 
 
 # noinspection PyUnresolvedReferences,PyUnusedLocal
 class TestNlpPipeline:
-
     @pytest.mark.parametrize(
-        "input", [(["foo"]), (["foo", "sent_tokenize"]), (["foo", "bar"]),]
+        "input", [
+            (["foo"]),
+            (["foo", "sent_tokenize"]),
+            (["foo", "bar"]),
+        ]
     )
     def test_should_invoke_sentence_tokenizer(self, input):
         input_text = "foo! bar baz, and. quux?"

@@ -12,7 +12,7 @@ class NlpPipeline(object):
 
     def __init__(self, raw_text, features):
         """
-        :param: input_text: string raw text document containing one or more sentences
+        :param: input_text: string raw text document of one or more sents
         :param: features: list<string> features to run in pipeline
 
         """
@@ -41,12 +41,18 @@ class NlpPipeline(object):
 
             except AttributeError as e:
                 print(e)
-                print("SimplePipeline supports no feature named: {}".format(feature))
+                print(
+                    "SimplePipeline supports no feature named: {}".format(
+                        feature
+                    )
+                )
 
         self.output = res
 
         if self.tokenized_words:
-            flat_list = [item for sublist in self.tokenized_words for item in sublist]
+            flat_list = [
+                item for sublist in self.tokenized_words for item in sublist
+            ]
             self.vocab_size = len(set(flat_list))
 
     def sent_tokenize(self, input_text):
