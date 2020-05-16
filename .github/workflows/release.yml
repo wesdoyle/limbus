@@ -34,7 +34,7 @@ jobs:
 
       - name: get release name
         id: get_release_name
-        run: echo ::set-out name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
       - name: upload build artifact
         uses: actions/upload-artifact@v2
