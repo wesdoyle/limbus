@@ -44,4 +44,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
             name: limbus-${{ steps.get_release_name.outputs.VERSION }}
-            path: dist/*tar.gz
+            path: dist/*
